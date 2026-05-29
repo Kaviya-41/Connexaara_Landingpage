@@ -87,6 +87,7 @@ function FloatingCard() {
               key={n}
               src={`https://i.pravatar.cc/40?img=${n}`}
               alt="user"
+              loading="lazy"
               style={{
                 width: "30px", height: "30px", borderRadius: "50%",
                 border: "2px solid #05050f", marginLeft: n === 11 ? 0 : "-8px",
@@ -196,7 +197,7 @@ export default function Login() {
                 border: "1px solid rgba(108,99,255,0.4)",
                 boxShadow: "0 0 20px rgba(108,99,255,0.3)",
               }}>
-                <img src={connexaaraLogo} alt="Connexaara" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={connexaaraLogo} alt="Connexaara" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
               <span style={{ fontSize: "18px", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>
                 Connexaara
@@ -433,6 +434,7 @@ export default function Login() {
                 <img
                   src={connexaaraLogo}
                   alt="Connexaara"
+                  loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </div>

@@ -1,22 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Lenis from "lenis";
 
 // ===============================
-// IMPORT SECTIONS
+// EAGER IMPORTS (above the fold)
 // ===============================
 import Navbar from "./sections/Navbar";
 import HomeSection from "./sections/HomeSection";
 import StatsSection from "./sections/StatsSection";
 import AboutSection from "./sections/AboutSection";
-import FeaturesSection from "./sections/FeaturesSection";
-import EventsSection from "./sections/EventsSection";
-import DashboardPreviewSection from "./sections/DashboardPreviewSection";
-import HowItWorksSection from "./sections/HowItWorksSection";
-import TestimonialsSection from "./sections/TestimonialsSection";
-import FAQSection from "./sections/FAQSection";
-import FinalCTASection from "./sections/FinalCTASection";
-import Footer from "./sections/Footer";
 import SectionTransitionWrapper from "./SectionTransitionWrapper";
+
+// ===============================
+// LAZY-LOADED SECTIONS (below the fold)
+// ===============================
+const FeaturesSection = lazy(() => import("./sections/FeaturesSection"));
+const EventsSection = lazy(() => import("./sections/EventsSection"));
+const DashboardPreviewSection = lazy(() => import("./sections/DashboardPreviewSection"));
+const HowItWorksSection = lazy(() => import("./sections/HowItWorksSection"));
+const TestimonialsSection = lazy(() => import("./sections/TestimonialsSection"));
+const FAQSection = lazy(() => import("./sections/FAQSection"));
+const FinalCTASection = lazy(() => import("./sections/FinalCTASection"));
+const Footer = lazy(() => import("./sections/Footer"));
+
+// Minimal section loading fallback
+function SectionLoader() {
+  return (
+    <div className="min-h-[30vh] flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-brand-primary border-t-transparent animate-spin" />
+    </div>
+  );
+}
 
 // ===============================
 // COMPONENT
@@ -98,7 +111,9 @@ export default function ConnexaaraLandingPage() {
           waveDirection="bottom"
           waveColor="#8B5CF6"
         >
-          <FeaturesSection />
+          <Suspense fallback={<SectionLoader />}>
+            <FeaturesSection />
+          </Suspense>
         </SectionTransitionWrapper>
 
 
@@ -110,7 +125,9 @@ export default function ConnexaaraLandingPage() {
           waveDirection="bottom"
           waveColor="#8B5CF6"
         >
-          <EventsSection />
+          <Suspense fallback={<SectionLoader />}>
+            <EventsSection />
+          </Suspense>
         </SectionTransitionWrapper>
 
         {/* DASHBOARD PREVIEW SECTION */}
@@ -121,7 +138,9 @@ export default function ConnexaaraLandingPage() {
           waveDirection="bottom"
           waveColor="#A855F7"
         >
-          <DashboardPreviewSection />
+          <Suspense fallback={<SectionLoader />}>
+            <DashboardPreviewSection />
+          </Suspense>
         </SectionTransitionWrapper>
 
         {/* HOW IT WORKS SECTION */}
@@ -132,7 +151,9 @@ export default function ConnexaaraLandingPage() {
           waveDirection="bottom"
           waveColor="#06B6D4"
         >
-          <HowItWorksSection />
+          <Suspense fallback={<SectionLoader />}>
+            <HowItWorksSection />
+          </Suspense>
         </SectionTransitionWrapper>
 
         {/* TESTIMONIALS SECTION */}
@@ -143,7 +164,9 @@ export default function ConnexaaraLandingPage() {
           waveDirection="bottom"
           waveColor="#8B5CF6"
         >
-          <TestimonialsSection />
+          <Suspense fallback={<SectionLoader />}>
+            <TestimonialsSection />
+          </Suspense>
         </SectionTransitionWrapper>
 
         {/* FAQ SECTION */}
@@ -154,7 +177,9 @@ export default function ConnexaaraLandingPage() {
           waveDirection="bottom"
           waveColor="#06B6D4"
         >
-          <FAQSection />
+          <Suspense fallback={<SectionLoader />}>
+            <FAQSection />
+          </Suspense>
         </SectionTransitionWrapper>
 
         {/* CONTACT / FINAL CTA SECTION */}
@@ -165,7 +190,9 @@ export default function ConnexaaraLandingPage() {
           waveDirection="bottom"
           waveColor="#8B5CF6"
         >
-          <FinalCTASection />
+          <Suspense fallback={<SectionLoader />}>
+            <FinalCTASection />
+          </Suspense>
         </SectionTransitionWrapper>
 
         {/* FOOTER */}
@@ -175,7 +202,9 @@ export default function ConnexaaraLandingPage() {
           waveType="none"
           waveDirection="none"
         >
-          <Footer />
+          <Suspense fallback={<SectionLoader />}>
+            <Footer />
+          </Suspense>
         </SectionTransitionWrapper>
       </div>
     </div>

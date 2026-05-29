@@ -86,11 +86,10 @@ export default function EventsShowcase() {
 
   // Page Entry Variants
   const containerVariants = {
-    hidden: { opacity: 0, scale: 0.96, filter: "blur(12px)" },
+    hidden: { opacity: 0, scale: 0.96 },
     visible: {
       opacity: 1,
       scale: 1,
-      filter: "blur(0px)",
       transition: {
         duration: 1.2,
         ease: [0.22, 1, 0.36, 1],
@@ -128,7 +127,8 @@ export default function EventsShowcase() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute w-[450px] h-[450px] rounded-full bg-[#6C63FF]/5 blur-[120px] -top-20 -left-10 pointer-events-none"
+        className="absolute w-[450px] h-[450px] rounded-full bg-[#6C63FF]/5 blur-[70px] -top-20 -left-10 pointer-events-none"
+        style={{ willChange: 'transform' }}
       />
       <motion.div
         animate={{
@@ -140,7 +140,8 @@ export default function EventsShowcase() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute w-[500px] h-[500px] rounded-full bg-[#06B6D4]/5 blur-[130px] top-[30%] -right-20 pointer-events-none"
+        className="absolute w-[500px] h-[500px] rounded-full bg-[#06B6D4]/5 blur-[80px] top-[30%] -right-20 pointer-events-none"
+        style={{ willChange: 'transform' }}
       />
       <motion.div
         animate={{
@@ -152,7 +153,8 @@ export default function EventsShowcase() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute w-[400px] h-[400px] rounded-full bg-[#8B5CF6]/5 blur-[120px] bottom-10 left-[20%] pointer-events-none"
+        className="absolute w-[400px] h-[400px] rounded-full bg-[#8B5CF6]/5 blur-[70px] bottom-10 left-[20%] pointer-events-none"
+        style={{ willChange: 'transform' }}
       />
 
       {/* ── Main Layout Container ───────────────────────────────────── */}

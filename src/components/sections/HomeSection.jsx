@@ -32,11 +32,10 @@ export default function HomeSection() {
 
   // Description entrance variants
   const descVariants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+    hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: {
         duration: 0.8,
         ease: "easeOut",
@@ -77,7 +76,8 @@ export default function HomeSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] rounded-full bg-brand-primary/15 blur-[140px]"
+          style={{ willChange: 'transform' }}
+          className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] rounded-full bg-brand-primary/15 blur-[80px]"
         />
 
         <motion.div
@@ -91,7 +91,8 @@ export default function HomeSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute bottom-[-15%] right-[-10%] w-[50vw] h-[50vw] max-w-[600px] rounded-full bg-brand-accent/18 blur-[140px]"
+          style={{ willChange: 'transform' }}
+          className="absolute bottom-[-15%] right-[-10%] w-[50vw] h-[50vw] max-w-[600px] rounded-full bg-brand-accent/18 blur-[80px]"
         />
 
         {/* Center Mesh Glow (Cinematic Depth) */}
@@ -105,7 +106,7 @@ export default function HomeSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[40vw] max-w-[800px] rounded-full bg-[radial-gradient(circle,rgba(108,99,255,0.12)_0%,transparent_60%)] blur-[110px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[40vw] max-w-[800px] rounded-full bg-[radial-gradient(circle,rgba(108,99,255,0.12)_0%,transparent_60%)] blur-[70px]"
         />
 
         {/* Futuristic Grid Pattern */}
@@ -239,7 +240,7 @@ export default function HomeSection() {
         />
 
         {/* Soft Particle Movement */}
-        {Array.from({ length: 15 }).map((_, i) => {
+        {Array.from({ length: 8 }).map((_, i) => {
           const size = Math.random() * 4 + 2;
           const startX = Math.random() * 100;
           const startY = Math.random() * 100;
@@ -308,11 +309,10 @@ export default function HomeSection() {
             <motion.h1
               key={word}
               variants={{
-                hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
+                hidden: { opacity: 0, y: 50 },
                 show: {
                   opacity: 1,
                   y: 0,
-                  filter: "blur(0px)",
                   transition: {
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1],

@@ -140,7 +140,7 @@ export default function EventsSection() {
   return (
     <section id="events" className="py-16 md:py-32 px-4 sm:px-6 md:px-10 relative overflow-hidden">
       {/* Background radial glow */}
-      <div className="absolute w-[600px] h-[600px] rounded-full bg-brand-primary/5 blur-[150px] -top-96 left-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute w-[600px] h-[600px] rounded-full bg-brand-primary/5 blur-[80px] -top-96 left-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -259,7 +259,7 @@ export default function EventsSection() {
             <div className="lg:col-span-7 relative flex justify-center w-full">
               {/* Radial background glow matching tab accent color */}
               <div
-                className="absolute w-80 h-80 rounded-full blur-[120px] opacity-20 pointer-events-none -top-10 -right-10 transition-colors duration-500"
+                className="absolute w-80 h-80 rounded-full blur-[70px] opacity-20 pointer-events-none -top-10 -right-10 transition-colors duration-500"
                 style={{ backgroundColor: tab.accentColor }}
               />
 
@@ -284,6 +284,7 @@ export default function EventsSection() {
                     initial={{ opacity: 0, scale: 1.02 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4 }}
+                    loading="lazy"
                     src={tab.image}
                     alt={tab.label}
                     className="w-full h-full object-cover"

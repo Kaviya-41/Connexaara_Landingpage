@@ -56,9 +56,9 @@ export default function DashboardPreviewSection() {
       className="py-16 md:py-32 px-4 sm:px-6 md:px-10 relative bg-black overflow-hidden"
     >
       {/* GLOBAL CINEMATIC LIGHTING */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-[#6C63FF]/10 blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-[#06B6D4]/10 blur-[160px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-r from-[#6C63FF]/8 to-[#06B6D4]/8 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-[#6C63FF]/10 blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-[#06B6D4]/10 blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-r from-[#6C63FF]/8 to-[#06B6D4]/8 blur-[90px] rounded-full pointer-events-none" />
 
       {/* TOP HEADER */}
       <div className="max-w-7xl mx-auto text-center relative z-10 mb-16">
@@ -88,8 +88,8 @@ export default function DashboardPreviewSection() {
           className="rounded-[24px] sm:rounded-[40px] border border-white/10 bg-[#050816]/75 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.85)] overflow-hidden p-4 sm:p-6 md:p-12 relative"
         >
           {/* Ambient Lighting Overlay inside Dashboard */}
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#6C63FF]/20 rounded-full blur-[130px] pointer-events-none" />
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#06B6D4]/20 rounded-full blur-[130px] pointer-events-none" />
+          <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#6C63FF]/20 rounded-full blur-[70px] pointer-events-none" />
+          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#06B6D4]/20 rounded-full blur-[70px] pointer-events-none" />
 
           {/* ASYMMETRIC DASHBOARD GRID */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

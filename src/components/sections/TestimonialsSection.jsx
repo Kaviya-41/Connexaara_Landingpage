@@ -36,7 +36,7 @@ export default function TestimonialsSection() {
 
   return (
     <section className="py-16 md:py-32 px-4 sm:px-6 md:px-10 bg-white/[0.02] border-y border-white/5 relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#8B5CF6]/10 blur-[150px] rounded-full pointer-events-none -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#8B5CF6]/10 blur-[80px] rounded-full pointer-events-none -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-20 relative z-10">

@@ -36,7 +36,7 @@ export default function SectionTransitionWrapper({
   const bgY = useTransform(scrollYProgress, [0, 1], [isMobile ? -20 : -60, isMobile ? 20 : 60]);
 
   // Particles config
-  const particleCount = isMobile ? 4 : 12;
+  const particleCount = isMobile ? 3 : 12;
 
   // Entry settings requested by user
   const entryVariants = {
@@ -44,13 +44,11 @@ export default function SectionTransitionWrapper({
       opacity: 0,
       y: isMobile ? 40 : 80,
       scale: 0.96,
-      filter: isMobile ? "blur(6px)" : "blur(12px)"
     },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      filter: "blur(0px)",
       transition: {
         duration: 1.2,
         ease: [0.22, 1, 0.36, 1]
@@ -66,7 +64,7 @@ export default function SectionTransitionWrapper({
     >
       {/* ── BACKGROUND PARALLAX LAYER ── */}
       <motion.div
-        style={{ y: bgY, opacity: bgOpacity }}
+        style={{ y: bgY, opacity: bgOpacity, willChange: 'transform', transform: 'translateZ(0)' }}
         className="absolute inset-0 pointer-events-none z-0 overflow-hidden"
       >
         {/* Futuristic Grid Overlay */}
@@ -87,9 +85,9 @@ export default function SectionTransitionWrapper({
           className={`absolute top-[-10%] left-[-5%] w-[45vw] h-[45vw] max-w-[500px] rounded-full filter pointer-events-none`}
           style={{
             background: `radial-gradient(circle, ${glowColors[0]} 0%, transparent 70%)`,
-            blur: isMobile ? "60px" : "120px",
-            filter: `blur(${isMobile ? "60px" : "120px"})`,
-            scale: glowScale
+            filter: `blur(${isMobile ? "50px" : "80px"})`,
+            scale: glowScale,
+            willChange: 'transform',
           }}
         />
 
@@ -108,9 +106,9 @@ export default function SectionTransitionWrapper({
           className={`absolute bottom-[-10%] right-[-5%] w-[45vw] h-[45vw] max-w-[500px] rounded-full filter pointer-events-none`}
           style={{
             background: `radial-gradient(circle, ${glowColors[1] || glowColors[0]} 0%, transparent 70%)`,
-            blur: isMobile ? "60px" : "120px",
-            filter: `blur(${isMobile ? "60px" : "120px"})`,
-            scale: glowScale
+            filter: `blur(${isMobile ? "50px" : "80px"})`,
+            scale: glowScale,
+            willChange: 'transform',
           }}
         />
 
@@ -225,7 +223,7 @@ export default function SectionTransitionWrapper({
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: isMobile ? "-40px" : "-100px" }}
-        style={{ y: contentY }}
+        style={{ y: contentY, willChange: 'transform' }}
         className="relative z-10 w-full h-full"
       >
         {children}

@@ -25,9 +25,11 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Scroll Spy
-      const sections = ["home", "about", "features", "events", "faq", "contact"];
-      const scrollPosition = window.scrollY + 250; // offset
+      // Always active "home" at the very top of the page
+      if (window.scrollY < 50) {
+        setActiveSection("home");
+        return;
+      }
 
       // Bottom of page check
       if (
@@ -38,12 +40,14 @@ export default function Navbar() {
         return;
       }
 
+      // Scroll Spy using getBoundingClientRect to ignore relative wrapper offsets
+      const sections = ["home", "about", "features", "events", "faq", "contact"];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
+          const rect = el.getBoundingClientRect();
+          // Check if the section intersects a line 200px from the top of the viewport
+          if (rect.top <= 200 && rect.bottom > 200) {
             setActiveSection(section);
             break;
           }

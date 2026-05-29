@@ -71,9 +71,9 @@ export default function FeaturesSection() {
       {/* Background Ambience Layers */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Animated Gradient Mesh */}
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#6C63FF]/20 blur-[150px] rounded-full animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#06B6D4]/15 blur-[150px] rounded-full animate-pulse" style={{ animationDuration: '10s' }} />
-        <div className="absolute top-[40%] left-[30%] w-[40%] h-[40%] bg-[#8B5CF6]/10 blur-[120px] rounded-full" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#6C63FF]/20 blur-[80px] rounded-full animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#06B6D4]/15 blur-[80px] rounded-full animate-pulse" style={{ animationDuration: '10s' }} />
+        <div className="absolute top-[40%] left-[30%] w-[40%] h-[40%] bg-[#8B5CF6]/10 blur-[70px] rounded-full" />
         
         {/* Grid Overlay */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

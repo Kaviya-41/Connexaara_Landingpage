@@ -100,15 +100,15 @@ export default function AboutSection() {
         >
           {/* Background Effects */}
           <motion.div
-            style={{ x: bgX, y: bgY }}
+            style={{ x: bgX, y: bgY, willChange: 'transform' }}
             className="absolute inset-0 pointer-events-none flex items-center justify-center z-0"
           >
             {/* Large Radial Glow */}
-            <div className="absolute w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(108,99,255,0.12)_0%,transparent_70%)] blur-[100px]" />
+            <div className="absolute w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(108,99,255,0.12)_0%,transparent_70%)] blur-[70px]" />
             
             {/* Ambient Lighting Blobs */}
-            <div className="absolute top-1/4 left-1/4 w-[250px] h-[250px] bg-cyan-500/10 blur-[130px] rounded-full" />
-            <div className="absolute bottom-1/4 right-1/4 w-[250px] h-[250px] bg-purple-500/10 blur-[130px] rounded-full" />
+            <div className="absolute top-1/4 left-1/4 w-[250px] h-[250px] bg-cyan-500/10 blur-[80px] rounded-full" />
+            <div className="absolute bottom-1/4 right-1/4 w-[250px] h-[250px] bg-purple-500/10 blur-[80px] rounded-full" />
             
             {/* Soft Light Beams */}
             <div className="absolute w-[2px] h-[600px] bg-gradient-to-b from-transparent via-cyan-400/20 to-transparent rotate-[35deg] blur-[2px]" />
@@ -191,7 +191,7 @@ export default function AboutSection() {
 
           {/* Ring 1 - Cyan Outer Orbit */}
           <motion.div
-            style={{ x: ring1X, y: ring1Y }}
+            style={{ x: ring1X, y: ring1Y, willChange: 'transform' }}
             className="absolute w-[240px] h-[240px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px] flex items-center justify-center pointer-events-none z-0"
           >
             <div style={{ transform: "rotateX(75deg) rotateY(15deg)", width: "100%", height: "100%" }}>
@@ -215,7 +215,7 @@ export default function AboutSection() {
 
           {/* Ring 2 - Purple Inner Orbit */}
           <motion.div
-            style={{ x: ring2X, y: ring2Y }}
+            style={{ x: ring2X, y: ring2Y, willChange: 'transform' }}
             className="absolute w-[260px] h-[260px] sm:w-[430px] sm:h-[430px] lg:w-[520px] lg:h-[520px] flex items-center justify-center pointer-events-none z-0"
           >
             <div style={{ transform: "rotateX(-60deg) rotateY(-20deg)", width: "100%", height: "100%" }}>
@@ -239,8 +239,8 @@ export default function AboutSection() {
 
           {/* Main Animated Orb Entrance & Float / Tilt Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, filter: "blur(20px)" }}
-            whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
             className="relative flex items-center justify-center z-10 select-none cursor-pointer group"

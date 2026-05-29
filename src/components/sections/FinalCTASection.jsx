@@ -15,8 +15,8 @@ export default function FinalCTASection() {
           className="relative rounded-[24px] sm:rounded-[40px] glass-panel p-6 sm:p-10 md:p-16 text-center border border-[#6C63FF]/30 overflow-hidden group"
         >
           {/* Animated Background Glows */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-gradient-to-b from-[#6C63FF]/30 to-transparent blur-[80px]" />
-          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#06B6D4]/20 blur-[100px] group-hover:bg-[#06B6D4]/30 transition-colors duration-700" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-gradient-to-b from-[#6C63FF]/30 to-transparent blur-[60px]" />
+          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#06B6D4]/20 blur-[70px] group-hover:bg-[#06B6D4]/30 transition-colors duration-700" />
           
           <div className="relative z-10">
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black mb-8 leading-tight">

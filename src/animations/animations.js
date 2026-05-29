@@ -51,3 +51,36 @@ export const slowFloatingAnim = {
   }
 };
 
+// ─── Mobile-aware animation helpers ───
+
+/** Returns floating animation props — disabled on mobile */
+export function getFloatingAnim(isMobile, yRange = 10, duration = 4) {
+  if (isMobile) return {};
+  return {
+    animate: { y: [0, -yRange, 0] },
+    transition: { duration, repeat: Infinity, ease: "easeInOut" },
+  };
+}
+
+/** Returns slow floating animation props — disabled on mobile */
+export function getSlowFloatingAnim(isMobile, yRange = 15, duration = 6) {
+  return getFloatingAnim(isMobile, yRange, duration);
+}
+
+/** Returns infinite rotation animation — disabled on mobile */
+export function getRotationAnim(isMobile, duration = 20, reverse = false) {
+  if (isMobile) return {};
+  return {
+    animate: { rotate: reverse ? -360 : 360 },
+    transition: { duration, repeat: Infinity, ease: "linear" },
+  };
+}
+
+/** Returns pulsing scale animation — disabled on mobile */
+export function getPulseAnim(isMobile, scaleRange = [1, 1.1, 1], duration = 4) {
+  if (isMobile) return {};
+  return {
+    animate: { scale: scaleRange },
+    transition: { duration, repeat: Infinity, ease: "easeInOut" },
+  };
+}
